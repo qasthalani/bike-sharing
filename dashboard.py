@@ -53,12 +53,10 @@ def create_bytemp_df(df):
 #melakukan import data
 bike_df = pd.read_csv("bike_sharing_cleaned.csv")
 
-datetime_columns = ["dteday"]
-bike_df.sort_values(by="dteday", inplace=True)
-bike_df.reset_index(inplace=True)
-
-for column in datetime_columns:
-    bike_df[column] = pd.to_datetime(bike_df[column])
+if "start_date" not in st.session_state:
+    st.session_state.start_date = min_date
+if "end_date" not in st.session_state:
+    st.session_state.end_date = max_date
 
 # membuat judul
 st.title('Bike Sharing Dashboard 📊')
@@ -87,9 +85,18 @@ with st.sidebar:
         value=[min_date, max_date]
     )
 
+# tombol reset
+    if st.button("Reset Filter"):
+        st.session_state.start_date = min_date
+        st.session_state.end_date = max_date
+        st.rerun()
+
+st.session_state.start_date = start_date
+st.session_state.end_date = end_date
+
 main_df = bike_df[
-    (bike_df["dteday"] >= pd.to_datetime(start_date)) &
-    (bike_df["dteday"] <= pd.to_datetime(end_date))
+    (bike_df["dteday"] >= pd.to_datetime(st.session_state.start_date)) &
+    (bike_df["dteday"] <= pd.to_datetime(st.session_state.end_date))
 ]
 
 daily_orders_df = create_daily_orders_df(main_df)
