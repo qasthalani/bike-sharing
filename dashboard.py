@@ -61,7 +61,7 @@ for column in datetime_columns:
     bike_df[column] = pd.to_datetime(bike_df[column])
 
 # membuat judul
-st.title('Bike Sharing Dashboard Analysis 📊')
+st.title('Bike Sharing Dashboard 📊')
 
 col1, col2, col3 = st.columns(3)
 
