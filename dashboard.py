@@ -53,10 +53,12 @@ def create_bytemp_df(df):
 #melakukan import data
 bike_df = pd.read_csv("bike_sharing_cleaned.csv")
 
-if "start_date" not in st.session_state:
-    st.session_state.start_date = min_date
-if "end_date" not in st.session_state:
-    st.session_state.end_date = max_date
+datetime_columns = ["dteday"]
+bike_df.sort_values(by="dteday", inplace=True)
+bike_df.reset_index(inplace=True)
+
+for column in datetime_columns:
+    bike_df[column] = pd.to_datetime(bike_df[column])
 
 # membuat judul
 st.title('Bike Sharing Dashboard 📊')
