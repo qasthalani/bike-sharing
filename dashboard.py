@@ -129,7 +129,8 @@ sns.barplot(x=labels_pl,
 ax1.set_title('Total Customers (Casual vs Registered)', loc='center', fontsize=30)
 ax1.set_xlabel('None')
 ax1.set_ylabel('None')
-ax1.tick_params('both', fontsize=20)
+ax.tick_params(axis='y', labelsize=20)
+ax.tick_params(axis='x', labelsize=15)
 
 st.pyplot(fig1)
 
@@ -148,7 +149,8 @@ sns.barplot(x=labels_d,
 
 ax2.set_xlabel("None")
 ax2.set_ylabel("None")
-ax2.tick_params('both', fontsize=20)
+ax.tick_params(axis='y', labelsize=20)
+ax.tick_params(axis='x', labelsize=15)
 
 st.pyplot(fig2)
 
@@ -169,7 +171,8 @@ sns.barplot(x=labels_ss,
 
 ax3.set_xlabel('None')
 ax3.set_ylabel('None')
-ax3.tick_params('both', fontsize=20)
+ax.tick_params(axis='y', labelsize=20)
+ax.tick_params(axis='x', labelsize=15)
 
 st.pyplot(fig3)
 
