@@ -102,7 +102,7 @@ with st.sidebar:
     st.session_state.end_date = end_date
 
     # tombol reset
-    if st.button("🔄 Reset Filter"):
+    if st.button("Reset Filter"):
         st.session_state.start_date = min_date
         st.session_state.end_date = max_date
         st.rerun()
