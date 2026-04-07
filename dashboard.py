@@ -127,8 +127,9 @@ sns.barplot(x=labels_pl,
             ax=ax1)
 
 ax1.set_title('Total Customers (Casual vs Registered)', loc='center', fontsize=30)
-ax1.set_xlabel('Customer Type')
-ax1.set_ylabel('Total Rentals')
+ax1.set_xlabel('None')
+ax1.set_ylabel('None')
+ax1.tick_params('both', fontsize=20)
 
 st.pyplot(fig1)
 
@@ -145,8 +146,9 @@ sns.barplot(x=labels_d,
             palette='coolwarm',
             ax=ax2)
 
-ax2.set_xlabel("Day Category")
-ax2.set_ylabel("Total Rentals")
+ax2.set_xlabel("None")
+ax2.set_ylabel("None")
+ax2.tick_params('both', fontsize=20)
 
 st.pyplot(fig2)
 
@@ -165,8 +167,9 @@ sns.barplot(x=labels_ss,
             palette='coolwarm',
             ax=ax3)
 
-ax3.set_xlabel('Season')
-ax3.set_ylabel('Total Rentals')
+ax3.set_xlabel('None')
+ax3.set_ylabel('None')
+ax3.tick_params('both', fontsize=20)
 
 st.pyplot(fig3)
 
