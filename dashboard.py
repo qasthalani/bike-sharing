@@ -81,20 +81,31 @@ with col3:
 min_date = bike_df['dteday'].min()
 max_date = bike_df['dteday'].max()
 
+if "start_date" not in st.session_state:
+    st.session_state.start_date = min_date
+
+if "end_date" not in st.session_state:
+    st.session_state.end_date = max_date
+
+# membuat sidebar
 with st.sidebar:
-    start_date, end_date =  st.date_input(
-        label='Rentang Waktu', min_value=min_date, max_value=max_date,
-        value=[min_date, max_date]
+    st.caption("Klik reset untuk kembali ke rentang awal")
+    start_date, end_date = st.date_input(
+        label='Rentang Waktu',
+        min_value=min_date,
+        max_value=max_date,
+        value=[st.session_state.start_date, st.session_state.end_date]
     )
 
-# tombol reset
-    if st.button("Reset Filter"):
+    # update session state
+    st.session_state.start_date = start_date
+    st.session_state.end_date = end_date
+
+    # tombol reset
+    if st.button("🔄 Reset Filter"):
         st.session_state.start_date = min_date
         st.session_state.end_date = max_date
         st.rerun()
-
-st.session_state.start_date = start_date
-st.session_state.end_date = end_date
 
 main_df = bike_df[
     (bike_df["dteday"] >= pd.to_datetime(st.session_state.start_date)) &
