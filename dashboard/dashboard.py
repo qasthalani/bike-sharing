@@ -134,7 +134,8 @@ def create_rfm_df(df):
     return daily
 
 # ── Data Import & Preprocessing ────────────────────────────────────────────────
-bike_df = pd.read_csv("C:\\Users\\slyth\\OneDrive\\Documents\\tugas stupen\\submission\\dashboard\\bike_sharing_clean.csv")
+import os
+bike_df = pd.read_csv(os.path.join(os.path.dirname(__file__), "bike_sharing_clean.csv"))
 
 datetime_columns = ["dteday"]
 bike_df.sort_values(by="dteday", inplace=True)
