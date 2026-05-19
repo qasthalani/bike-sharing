@@ -109,7 +109,7 @@ def create_rfm_df(df):
     try:
     daily['R'] = pd.qcut(daily['recency_days'], q=3, labels=[3, 2, 1],
                           duplicates='drop').astype(int)
-except ValueError:
+    except ValueError:
     daily['R'] = 2
 
     # F — Frequency (monthly total)
@@ -119,7 +119,7 @@ except ValueError:
         daily['monthly_total'], q=3, labels=[1, 2, 3],
         duplicates='drop'
     ).astype(int)
-except ValueError:
+    except ValueError:
     daily['F'] = 2
 
     # M — Magnitude (daily volume)
