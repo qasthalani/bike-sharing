@@ -561,7 +561,7 @@ seg_stats = rfm_df.groupby("RFM_Segment").agg(
     Avg_Total=("cnt", "mean"),
     Avg_Casual=("casual", "mean"),
     Avg_Registered=("registered", "mean")
-).reindex(SEG_ORDER).round(0).astype(int)
+).reindex(SEG_ORDER).fillna(0).round(0).astype(int)
 
 heatmap_data = seg_stats.T
 heatmap_norm = heatmap_data.div(heatmap_data.max(axis=1), axis=0)
