@@ -107,20 +107,17 @@ def create_rfm_df(df):
     max_date = daily['dteday'].max()
     daily['recency_days'] = (max_date - daily['dteday']).dt.days
     try:
-    daily['R'] = pd.qcut(daily['recency_days'], q=3, labels=[3, 2, 1],
-                          duplicates='drop').astype(int)
+        daily['R'] = pd.qcut(daily['recency_days'], q=3, labels=[3, 2, 1], duplicates='drop').astype(int)
+        
     except ValueError:
-    daily['R'] = 2
+        daily['R'] = 2
 
     # F — Frequency (monthly total)
     daily['monthly_total'] = daily.groupby(['yr', 'mnth'])['cnt'].transform('sum')
     try:
-    daily['F'] = pd.qcut(
-        daily['monthly_total'], q=3, labels=[1, 2, 3],
-        duplicates='drop'
-    ).astype(int)
+        daily['F'] = pd.qcut(daily['monthly_total'], q=3, labels=[1, 2, 3], duplicates='drop').astype(int)
     except ValueError:
-    daily['F'] = 2
+        daily['F'] = 2
 
     # M — Magnitude (daily volume)
     p33, p66 = daily['cnt'].quantile(0.33), daily['cnt'].quantile(0.66)
