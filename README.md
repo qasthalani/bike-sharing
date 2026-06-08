@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🚲 Bike Sharing Dashboard
+# Bike Sharing Dashboard
 
 **An interactive data analysis dashboard exploring bike rental behavior patterns**
 
@@ -14,7 +14,7 @@
 
 ---
 
-## 📸 Preview
+## Preview
 
 > 🔗 **Live Demo:** [bike-sharing-dshaq7y7plk7tlbvz2bs2b.streamlit.app](https://bike-sharing-dshaq7y7plk7tlbvz2bs2b.streamlit.app/)
 
@@ -23,7 +23,7 @@
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Overview](#-overview)
 - [Business Questions](#-business-questions)
@@ -36,7 +36,7 @@
 
 ---
 
-## 🔎 Overview
+## Overview
 
 This project is a comprehensive data analysis of the **Capital Bikeshare system in Washington D.C.**, covering hourly rental records from **2011–2012** (17,379 rows). It was developed as the final project for the **Fundamental Data Analysis** course in the Coding Camp Independent Study Program.
 
@@ -47,7 +47,7 @@ The analysis goes beyond basic EDA by applying:
 
 ---
 
-## ❓ Business Questions
+## Business Questions
 
 | # | Question |
 |---|----------|
@@ -60,23 +60,23 @@ The analysis goes beyond basic EDA by applying:
 
 ---
 
-## 💡 Key Insights
+## Key Insights
 
-> **📈 Growth**
+> **Growth**
 > Rentals grew approximately **6× from 2011 to 2012**, with a consistent seasonal peak each year in mid-to-late year (August–October).
 
-> **👥 User Type**
+> **User Type**
 > **Registered users (81%)** far outnumber casual users (19%). Registered users drive weekday demand while casual users are more active on weekends — indicating distinct commuter vs. leisure profiles.
 
-> **🕐 Peak Hours**
+> **Peak Hours**
 > Weekday rentals spike sharply at **08:00 and 17:00–18:00** (classic bimodal commuter pattern). Weekend rentals form a single broad peak around **11:00–15:00**, reflecting recreational usage.
 
-> **📊 RFM Segmentation**
+> **RFM Segmentation**
 > Champion days cluster in **August–October**. January–February are dominated by Low Activity days — prime targets for off-season promotions.
 
 ---
 
-## ✨ Dashboard Features
+## Dashboard Features
 
 <table>
   <tr>
@@ -84,54 +84,54 @@ The analysis goes beyond basic EDA by applying:
     <th>Description</th>
   </tr>
   <tr>
-    <td>🔍 <b>Interactive Filters</b></td>
+    <td> <b>Interactive Filters</b></td>
     <td>Date range, Year, Season, Weather condition, Day type — all applied dynamically</td>
   </tr>
   <tr>
-    <td>📊 <b>Delta Metrics</b></td>
+    <td> <b>Delta Metrics</b></td>
     <td>KPI cards show change vs. the equivalent previous period</td>
   </tr>
   <tr>
-    <td>🎨 <b>Consistent Design</b></td>
+    <td> <b>Consistent Design</b></td>
     <td>Uniform color palette with highlight for the highest bar; value annotations on all charts</td>
   </tr>
   <tr>
-    <td>🕐 <b>Peak Hour Analysis</b></td>
+    <td> <b>Peak Hour Analysis</b></td>
     <td>Grouped bar, heatmap (hour × day of week), and dual-line chart (weekday vs. weekend)</td>
   </tr>
   <tr>
-    <td>📊 <b>Temporal RFM</b></td>
+    <td> <b>Temporal RFM</b></td>
     <td>Manual segmentation of days into Champions / Loyal Days / Potential / Low Activity</td>
   </tr>
   <tr>
-    <td>🛡️ <b>Robust Error Handling</b></td>
+    <td> <b>Robust Error Handling</b></td>
     <td>try-except on date filter, warning on empty multiselect, guard on empty filtered result</td>
   </tr>
 </table>
 
 ---
 
-## 🗂️ Project Structure
+##  Project Structure
 
 ```
 bike-sharing/
 │
-├── 📁 dashboard/
+├── dashboard/
 │   ├── dashboard.py               # Main Streamlit dashboard
 │   └── bike_sharing_clean.csv     # Cleaned dataset (output of notebook)
 │
-├── 📄 requirements.txt            # Python dependencies
-├── 📄 README.md                   # Project documentation
+├── requirements.txt            # Python dependencies
+├── README.md                   # Project documentation
 │
-└── 📁 notebook/
+└── notebook/
     └── Nabilah_Yasmin_Q_Proyek_Analisis_Data.ipynb
 ```
 
-> ⚠️ **Important:** Run the notebook end-to-end first to generate `bike_sharing_clean.csv` before running the dashboard locally.
+> **Important:** Run the notebook end-to-end first to generate `bike_sharing_clean.csv` before running the dashboard locally.
 
 ---
 
-## ⚙️ Setup & Run Locally
+## Setup & Run Locally
 
 ### Prerequisites
 
@@ -173,7 +173,7 @@ Open **[http://localhost:8501](http://localhost:8501)** in your browser.
 
 ---
 
-## 📦 Dependencies
+## Dependencies
 
 | Package | Version | Purpose |
 |---------|---------|---------|
@@ -184,7 +184,7 @@ Open **[http://localhost:8501](http://localhost:8501)** in your browser.
 
 ---
 
-## 📁 Dataset
+## Dataset
 
 | Attribute | Detail |
 |-----------|--------|
@@ -196,7 +196,7 @@ Open **[http://localhost:8501](http://localhost:8501)** in your browser.
 
 ---
 
-## 👤 Author
+## Author
 
 <table>
   <tr>
